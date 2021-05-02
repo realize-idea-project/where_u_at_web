@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -7,9 +6,9 @@ function App() {
       method: 'GET',
       mode: 'cors',
     }).then(res => {
-      console.log('res', res)
       alert(`hi ${res.status}`);
-    });
+      return res.json();
+    }).then(data => {console.log(data)})
   };
 
   return (
